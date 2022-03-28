@@ -118,7 +118,7 @@
         }
     });
     // When & Where owlCarousel
-    $('.whenwhere .owl-carousel').owlCarousel({
+    $('#whenwhere .owl-carousel').owlCarousel({
         loop: true
         , margin: 30
         , mouseDrag: true
@@ -163,7 +163,7 @@
     // Remove links that don't actually link to anything
     .not('[href="#"]')
     .not('[href="#0"]')
-    .click(function(event) {
+    .on("click", function(event) {
     // On-page links
     if (
       location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
@@ -183,12 +183,12 @@
           // Callback after animation
           // Must change focus!
           var $target = $(target);
-          $target.focus();
+          $target.trigger("focus");
           if ($target.is(":focus")) { // Checking if the target was focused
             return false;
           } else {
             $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
+            $target.trigger("focus"); // Set focus again
           };
         });
       }
