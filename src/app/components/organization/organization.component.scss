@@ -1,0 +1,17 @@
+#org-container {
+    min-height: 484px;
+}
+
+#org-container:hover > #org-hour {
+    color: #BD945A;
+}
+
+#org-hour {
+    font-size:18px;
+    margin-bottom: 3px;
+    color: black;
+}
+
+#org-detail {
+    padding-top: 1px;
+}

@@ -12,25 +12,36 @@
                     <div class="item">
                         <div class="whenwhere-img"> <img src="assets/images/whenwhere/3.jpg" alt=""></div>
                         <div class="content">
-                            <h5>Wedding Ceremony</h5>
-                            <p><i class="ti-location-pin"></i> 175 Broadway, Brooklyn, New York 11244, USA</p>
+                            <h5>Ceremonia Eclesiástica</h5>
+                            <p id="qst-p">
+                                <a (click)="map1=!map1"><i class="ti-location-pin"></i>Iglesia
+                                    Católica Santiago Apóstol de Puembo</a>
+                            </p>
                             <p><i class="ti-time"></i> <span>12:00am – 13:00pm</span></p>
                         </div>
                     </div>
                     <div class="item">
                         <div class="whenwhere-img"> <img src="assets/images/whenwhere/1.jpg" alt=""></div>
                         <div class="content">
-                            <h5>Weddding Party</h5>
-                            <p><i class="ti-location-pin"></i> Fortune Brooklyn restaurant, 149 Broadway, Brooklyn, NY, USA</p>
+                            <h5>Recepción Almuerzo</h5>
+                            <p id="qst-p">
+                                <a (click)="map2=!map2"><br><i class="ti-location-pin"></i>
+                                    Quinta La Mirá,
+                                    San José de Puembo </a>
+                            </p>
                             <p><i class="ti-time"></i> <span>14:00pm</span></p>
                         </div>
                     </div>
                     <div class="item">
                         <div class="whenwhere-img"> <img src="assets/images/whenwhere/2.jpg" alt=""></div>
                         <div class="content">
-                            <h5>Accomodations</h5>
-                            <p><i class="ti-direction-alt"></i> Hotel and distance from wedding party restaurant:</p>
-                            <p><i class="ti-direction"></i> The William Vale (7 min)</p>
+                            <h5>Fiesta!!!!</h5>
+                            <p id="qst-p">
+                                <a (click)="map2=!map2"><br><i class="ti-location-pin"></i>
+                                    Quinta La Mirá,
+                                    San José de Puembo </a>
+                            </p>
+                            <p><i class="ti-time"></i> <span>16:00pm hasta las 15!!!!</span></p>
                         </div>
                     </div>
                 </div>
@@ -38,3 +49,22 @@
         </div>
     </div>
 </div>
+<p-dialog [(visible)]="map1" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="true">
+    <div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.799406416674!2d-78.35981818580376!3d-0.17642173547071627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d592491c429b81%3A0x7f203d71e57c905!2sIglesia%20Cat%C3%B3lica%20Santiago%20Ap%C3%B3stol%20de%20Puembo!5e0!3m2!1ses-419!2sec!4v1648570156355!5m2!1ses-419!2sec"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</p-dialog>
+
+<p-dialog [(visible)]="map2" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="true">
+    <div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7923259756544!2d-78.35173668255615!3d-0.20682399999999856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d593c14fde27b3%3A0x866a857d04925091!2sQuinta%20la%20Mir%C3%A1!5e0!3m2!1ses!2sec!4v1648582545985!5m2!1ses!2sec"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</p-dialog>

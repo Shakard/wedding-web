@@ -15,6 +15,8 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { RsvpComponent } from './components/rsvp/rsvp.component';
 import { GiftComponent } from './components/gift/gift.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {DialogModule} from 'primeng/dialog';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,10 +33,12 @@ import { FooterComponent } from './components/footer/footer.component';
     QuestionsComponent,
     RsvpComponent,
     GiftComponent,
-    FooterComponent
+    FooterComponent    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    DialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

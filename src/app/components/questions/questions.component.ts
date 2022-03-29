@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionsComponent implements OnInit {
 
+  mapDisplayed = false;
+  displayResponsive: boolean = false;   
+  map1: boolean = false;   
+  map2: boolean = false;   
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  showResponsiveDialog() {
+    this.displayResponsive = true;
+}
 
 }
