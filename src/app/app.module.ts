@@ -17,6 +17,8 @@ import { GiftComponent } from './components/gift/gift.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {DialogModule} from 'primeng/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,14 +35,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     QuestionsComponent,
     RsvpComponent,
     GiftComponent,
-    FooterComponent    
+    FooterComponent,
+  
   ],
   imports: [
     BrowserModule,
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
