@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class GuestService {
-  url = environment.URL_API_BIBLIOTECA;
+  url = environment.URL_API_LOCAL;
   
   constructor(private httpClient: HttpClient) { }
 
