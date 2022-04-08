@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-
-  constructor() { }
+  numbers = new Array<number>();
+  constructor() {}
 
   ngOnInit(): void {
+    this.numbers = Array(5).fill(19);
   }
 
 }

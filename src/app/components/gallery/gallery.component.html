@@ -15,8 +15,36 @@
         </div>
     </div>
     <div class="container">
-        <div class="row gallery-filter mt-3">
+        <div *ngFor="number of numbers; let i = index" class="row gallery-filter mt-3">
+            <!-- <div class="col-md-4 gallery-item ceremony">
+                <a href="{{'assets/images/gallery/Dijo que Sí/' + i + '.jpg'}}" class="img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="{{'assets/images/gallery/Dijo que Sí/' + i + '.jpg'}}" class="img-fluid mx-auto d-block" alt=""> </div>
+                        <div class="gallery-detail">
+                            <h4 class="mb-0">Wedding Ceremony</h4>
+                        </div>
+                    </div>
+                </a>
+            </div> -->
             <div class="col-md-4 gallery-item ceremony">
+                <div style="width: 250px" class="gallery-box ceremony">
+                    <p-image src="{{'assets/images/gallery/Dijo que Sí/' + i + '.jpg'}}" alt="Image"
+                        [preview]="true"></p-image>
+                </div>
+            </div>
+            <div class="col-md-4 gallery-item">
+                <div style="width: 250px" class="gallery-box ceremony">
+                    <p-image src="{{'assets/images/gallery/Nosotros/' + i + '.jpg'}}" alt="Image"
+                        [preview]="true"></p-image>
+                </div>
+            </div>
+            <div class="col-md-4 gallery-item party">
+                <div style="width: 250px" class="gallery-box ceremony">
+                    <p-image src="{{'assets/images/gallery/Pedida de Mano/' + i + '.JPG'}}" alt="Image"
+                        [preview]="true"></p-image>
+                </div>
+            </div>
+            <!-- <div class="col-md-4 gallery-item ceremony">
                 <a href="assets/images/gallery/1.jpg" class="img-zoom">
                     <div class="gallery-box">
                         <div class="gallery-img"> <img src="assets/images/gallery/1.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
@@ -75,7 +103,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

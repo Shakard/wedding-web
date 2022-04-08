@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {ImageModule} from 'primeng/image';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    ImageModule,
     HttpClientModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},],
