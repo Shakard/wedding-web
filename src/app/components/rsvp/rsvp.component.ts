@@ -53,7 +53,7 @@ export class RsvpComponent implements OnInit {
       })
     };
 
-    this.http.post('http://18.223.20.35/api/confirmation', formData, httpOptions).subscribe({
+    this.http.post('https://backend.wedding-solvit.com/api/confirmation', formData, httpOptions).subscribe({
       next: () => this.messageService.successConfirmation(),
       error: () => this.messageService.badData(),
       complete: () => this.resetForm()
