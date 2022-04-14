@@ -31,9 +31,17 @@ export class RsvpComponent implements OnInit {
 
   buildForm() {
     this.form = this.formBuilder.group({
-      detail: null,
-      image: null
+      detail: [null, Validators.required],
+      image: [null, Validators.required],
     });
+  }
+
+  get getDetail() {
+    return this.form.get('detail');
+  }
+
+  get getImage() {
+    return this.form.get('image');
   }
 
   uploadFile(event: Event) {
@@ -44,21 +52,27 @@ export class RsvpComponent implements OnInit {
   }
 
   submitForm() {
-    const formData = new FormData();
-    formData.append("detail", this.form.controls['detail'].value);
-    formData.append("image", this.form.controls['image'].value);
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Accept': 'application/json'
+    if (!this.form.valid) {
+      this.messageService.invalidFields();
+      this.form.markAllAsTouched();
+    } else {
+      const formData = new FormData();
+      formData.append("detail", this.form.controls['detail'].value);
+      formData.append("image", this.form.controls['image'].value);
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Accept': 'application/json'
+        })
+      };
+      this.http.post('https://backend.wedding-solvit.com/api/confirmation', formData, httpOptions).subscribe({
+      // this.http.post('http://localhost/Wedding-backend/public/api/confirmation', formData, httpOptions).subscribe({
+        next: () => this.messageService.successConfirmation(),
+        error: (response) => this.messageService.errorUploadFile(response.error.errors.image),
+        complete: () => this.resetForm()
       })
-    };
+      console.log(this.form.value);
+    }
 
-    this.http.post('https://backend.wedding-solvit.com/api/confirmation', formData, httpOptions).subscribe({
-      next: () => this.messageService.successConfirmation(),
-      error: () => this.messageService.badData(),
-      complete: () => this.resetForm()
-    })
-    console.log(this.form.value);
 
   }
 

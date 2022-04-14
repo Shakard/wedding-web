@@ -22,6 +22,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {ImageModule} from 'primeng/image';
+import {GalleriaModule} from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import {ImageModule} from 'primeng/image';
     ReactiveFormsModule,
     FormsModule,
     ImageModule,
+    GalleriaModule,
     HttpClientModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},],

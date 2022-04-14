@@ -73,6 +73,16 @@ export class SweetMessageService {
         });
     }
 
+    errorUploadFile(response: any) {
+        return Swal.fire({
+            // title: 'La imagen debe ser de tipo: jpg, png, pdf (tamaño inferior a 2mb)',
+            text: response[1],
+            padding: '1px',
+            color: '#ff3333',           
+            confirmButtonColor:'#ff3333',  
+        }).then(response);
+    }
+
     questionClearTables({title = '¿Limpiar todas las mesas?'}) {
         return Swal.fire({
             title,
@@ -131,12 +141,10 @@ export class SweetMessageService {
 
     invalidFields() {
         return Swal.fire({
-            title: '',
             text:'Por favor ingrese todos los campos',
-            icon: 'error',
             width: '300px',
-            color: 'red',           
-            confirmButtonColor:'#0078d7',
+            color: '#ff3333',           
+            confirmButtonColor:'#ff3333',
             padding: '2px'
         });
     }

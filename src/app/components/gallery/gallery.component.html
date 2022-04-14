@@ -9,23 +9,13 @@
         <div class="row">
             <ul class="col list-unstyled list-inline mb-0 gallery-menu" id="gallery-filter">
                 <li class="list-inline-item"><a class="active" data-filter="*">Todas</a></li>
-                <li class="list-inline-item"><a class="" data-filter=".ceremony">Dijo que Sí</a></li>
-                <li class="list-inline-item"><a class="" data-filter=".party">Pedida de Mano</a></li>
+                <!-- <li class="list-inline-item"><a class="" data-filter=".ceremony">Dijo que Sí</a></li>
+                <li class="list-inline-item"><a class="" data-filter=".party">Pedida de Mano</a></li> -->
             </ul>
         </div>
     </div>
     <div class="container">
-        <div *ngFor="number of numbers; let i = index" class="row gallery-filter mt-3">
-            <!-- <div class="col-md-4 gallery-item ceremony">
-                <a href="{{'assets/images/gallery/Dijo que Sí/' + i + '.jpg'}}" class="img-zoom">
-                    <div class="gallery-box">
-                        <div class="gallery-img"> <img src="{{'assets/images/gallery/Dijo que Sí/' + i + '.jpg'}}" class="img-fluid mx-auto d-block" alt=""> </div>
-                        <div class="gallery-detail">
-                            <h4 class="mb-0">Wedding Ceremony</h4>
-                        </div>
-                    </div>
-                </a>
-            </div> -->
+        <!-- <div *ngFor="number of numbers; let i = index" class="row gallery-filter mt-3">           
             <div class="col-md-4 gallery-item ceremony">
                 <div style="width: 250px" class="gallery-box ceremony">
                     <p-image src="{{'assets/images/gallery/Dijo que Sí/' + i + '.jpg'}}" alt="Image"
@@ -43,67 +33,13 @@
                     <p-image src="{{'assets/images/gallery/Pedida de Mano/' + i + '.JPG'}}" alt="Image"
                         [preview]="true"></p-image>
                 </div>
-            </div>
-            <!-- <div class="col-md-4 gallery-item ceremony">
-                <a href="assets/images/gallery/1.jpg" class="img-zoom">
-                    <div class="gallery-box">
-                        <div class="gallery-img"> <img src="assets/images/gallery/1.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
-                        <div class="gallery-detail">
-                            <h4 class="mb-0">Wedding Ceremony</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 gallery-item party">
-                <a href="assets/images/gallery/2.jpg" class="img-zoom">
-                    <div class="gallery-box">
-                        <div class="gallery-img"> <img src="assets/images/gallery/2.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
-                        <div class="gallery-detail">
-                            <h4 class="mb-0">Wedding Party</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 gallery-item ceremony">
-                <a href="assets/images/gallery/3.jpg" class="img-zoom">
-                    <div class="gallery-box">
-                        <div class="gallery-img"> <img src="assets/images/gallery/3.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
-                        <div class="gallery-detail">
-                            <h4 class="mb-0">Wedding Ceremony</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 gallery-item party">
-                <a href="assets/images/gallery/4.jpg" class="img-zoom">
-                    <div class="gallery-box">
-                        <div class="gallery-img"> <img src="assets/images/gallery/4.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
-                        <div class="gallery-detail">
-                            <h4 class="mb-0">Wedding Party</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 gallery-item ceremony">
-                <a href="assets/images/gallery/5.jpg" class="img-zoom">
-                    <div class="gallery-box">
-                        <div class="gallery-img"> <img src="assets/images/gallery/5.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
-                        <div class="gallery-detail">
-                            <h4 class="mb-0">Wedding Ceremony</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 gallery-item party">
-                <a href="assets/images/gallery/6.jpg" class="img-zoom">
-                    <div class="gallery-box">
-                        <div class="gallery-img"> <img src="assets/images/gallery/6.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
-                        <div class="gallery-detail">
-                            <h4 class="mb-0">Wedding Party</h4>
-                        </div>
-                    </div>
-                </a>
-            </div> -->
-        </div>
+            </div>           
+        </div> -->
+        <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '800px'}"
+            [numVisible]="7" [showItemNavigators]="true" [showItemNavigatorsOnHover]="true" [showThumbnails]="false">
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item.url" style="width: 100%; display: block;" />
+            </ng-template>
+        </p-galleria>
     </div>
 </div>

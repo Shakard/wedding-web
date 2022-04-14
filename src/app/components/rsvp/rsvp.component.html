@@ -2,23 +2,32 @@
 <div id="rsvp" class="section-padding bg-img bg-fixed" style="background-image: url(assets/images/banner-222.jpg)">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-3 bg-white p-40"> <span class="oliven-title-meta text-center">Confirma tu asistencia</span>
+            <div class="col-md-6 offset-md-3 bg-white p-40"> <span class="oliven-title-meta text-center">Confirma tu
+                    asistencia</span>
                 <h2 class="oliven-title text-center"></h2>
                 <br>
                 <form [formGroup]="form" class="contact__form" (ngSubmit)="submitForm()">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
+                                <small
+                                    *ngIf="form.get('detail')?.invalid && form.get('detail')?.touched">*
+                                    Por favor
+                                    ingrese su email o su número de teléfono (sin código de país)</small>
                                 <input formControlName="detail" type="text" class="form-control"
-                                    placeholder="Email o Teléfono">
+                                    placeholder="Email o Teléfono">                                
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                 
-                                    <label for="file">Adjunta tu certificado de vacunación</label>
-                    
-                                <input id="file" #fileUpload type="file" (change)="uploadFile($event)">
+
+                                <label for="file">Adjunta tu certificado de vacunación</label><br>
+                                <small
+                                *ngIf="form.get('image')?.invalid && form.get('image')?.touched">*
+                                Por favor
+                                seleccione su carnet de vacunación</small>
+                                <input formControlName="image" id="file" #fileUpload type="file" (change)="uploadFile($event)">
+                               
                             </div>
                         </div>
                         <div class="col-md-12">
